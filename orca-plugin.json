@@ -1,0 +1,23 @@
+{
+  "$schema": "https://raw.githubusercontent.com/stablyai/orca/main/docs/schemas/plugins/orca-plugin.v2.schema.json",
+  "manifestVersion": 2,
+  "id": "aura",
+  "name": "Aura for Orca",
+  "version": "1.0.0",
+  "execution": "data",
+  "description": "Aura Dark as app, syntax and terminal themes for Orca.",
+  "license": "MIT",
+  "repository": "https://github.com/vale-c/orca-aura",
+  "engines": {
+    "orca": ">=1.4.246"
+  },
+  "contributes": {
+    "themes": [{ "id": "aura-dark", "title": "Aura Dark", "path": "themes/aura-dark.json" }],
+    "terminalThemes": [{ "id": "aura-dark", "title": "Aura Dark", "path": "terminal/aura-dark.json" }]
+  },
+  "capabilities": [],
+  "cover": {
+    "path": "images/cover.png",
+    "alt": "Aura for Orca: the plugin name and its palette beside Orca's editor in Aura Dark"
+  }
+}
