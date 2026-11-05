@@ -77,7 +77,7 @@ function loadStyle(contribution) {
   const syntax = []
   for (const scope of SYNTAX_SCOPES) {
     const color = scopeForeground(theme, scope)
-    if (color && distance(color, background) > 60 && !syntax.some((seen) => distance(seen, color) < 40)) syntax.push(color)
+    if (color && distance(color, background) > 60 && ![foreground, ...syntax].some((seen) => distance(seen, color) < 40)) syntax.push(color)
   }
   const accent = opaque('--ring', t['--primary'] ?? syntax[0] ?? foreground)
   const shot = resolve(shots, `${contribution.id}-editor.png`)
@@ -101,7 +101,11 @@ if (!styles.length) fail('orca-plugin.json lists no app themes')
 const lead = styles[0]
 const name = manifest.name.replace(/\s+for\s+Orca$/i, '')
 const escape = (value) => String(value).replace(/[&<>"']/g, (char) => `&#${char.charCodeAt(0)};`)
-const shortTitle = (title) => title.replace(new RegExp(`^${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s+`, 'i'), '') || title
+// "Shades of Purple (Super Dark)" becomes "Super Dark": the name, then the parentheses left around the rest.
+const shortTitle = (title) =>
+  title
+    .replace(new RegExp(`^${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s+`, 'i'), '')
+    .replace(/^\((.+)\)$/, '$1') || title
 
 // The window is the screenshot at its native 1440x900, scaled down, so the traffic lights sit where
 // macOS draws them in Orca's inset title bar and the slice geometry is in screenshot pixels.
