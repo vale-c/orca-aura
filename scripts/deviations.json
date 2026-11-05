@@ -1,0 +1,18 @@
+[
+  {
+    "theme": "aura-dark",
+    "kind": "app",
+    "name": "--tab-inactive-foreground",
+    "source": "tab.inactiveForeground",
+    "upstream": "#6d6d6d",
+    "shipped": "#7f7f7f"
+  },
+  {
+    "theme": "aura-dark",
+    "kind": "app",
+    "name": "--git-decoration-ignored",
+    "source": "gitDecoration.ignoredResourceForeground",
+    "upstream": "#4d4d4d",
+    "shipped": "#616161"
+  }
+]
