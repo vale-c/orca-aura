@@ -1,0 +1,50 @@
+{
+  "$schema": "https://raw.githubusercontent.com/stablyai/orca/main/docs/schemas/plugins/orca-catalog.v2.schema.json",
+  "catalogVersion": 2,
+  "name": "Aura for Orca",
+  "owner": "vale-c",
+  "plugins": [
+    {
+      "id": "vale-c.aura",
+      "source": {
+        "kind": "git",
+        "url": "https://github.com/vale-c/orca-aura.git",
+        "ref": "main"
+      },
+      "description": "Aura Dark as app, syntax and terminal themes for Orca.",
+      "categories": [
+        "themes",
+        "terminal-themes"
+      ],
+      "releases": [
+        {
+          "version": "1.0.0",
+          "commit": "3ef068e051d515f0d8e11713e4dbdb082373d2b1",
+          "contentHash": "255f92ed2c9db2ef0a4115114b9f33b83d66e00347a6143c7484a66d9820eeb0",
+          "execution": "data",
+          "minimumOrca": "1.4.246",
+          "name": "Aura for Orca",
+          "contributes": [
+            {
+              "kind": "themes",
+              "name": "Aura Dark"
+            },
+            {
+              "kind": "terminalThemes",
+              "name": "Aura Dark"
+            }
+          ],
+          "images": {
+            "cover": {
+              "path": "images/cover.png",
+              "alt": "Aura for Orca: the plugin name and its palette beside Orca's editor in Aura Dark",
+              "sha256": "5aa4428dd1ad8ffe397662d05eb6e6390b008da76dc2b382d085c34ee151bebc",
+              "width": 1600,
+              "height": 1000
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
